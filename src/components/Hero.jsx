@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mainBcg from '../images/mainBcg.jpeg';
+import mainBcg2 from '../images/mainBcg2.jpg';
 const Hero = ({ children, image, title, max }) => {
 	return (
 		<HeroWrapper max={max} img={image}>
@@ -29,6 +29,6 @@ const HeroWrapper = styled.div`
 	}
 `;
 Hero.defaultProps = {
-	image : mainBcg
+	image : mainBcg2
 };
 export default Hero;
