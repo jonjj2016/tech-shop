@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import Hero from '../components/Hero';
 import styled from 'styled-components';
-import defaultBcg from '../images/defaultBcg.jpeg';
+import defaultBcg from '../images/mainBcg2.jpg';
 import { Link } from 'react-router-dom';
 export default memo(function DefaultPage () {
 	return (

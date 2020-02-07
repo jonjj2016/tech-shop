@@ -1,10 +1,13 @@
 import React from 'react';
-
-const Products = () => {
+import Products from '../components/ProductsPage/Products';
+import Hero from '../components/Hero';
+import ProductsBcg from '../images/productsBcg.jpeg';
+const ProductsPage = () => {
 	return (
 		<div>
-			<h1>Hello from Products</h1>
+			<Hero image={ProductsBcg} />
+			<Products />
 		</div>
 	);
 };
-export default Products;
+export default ProductsPage;
