@@ -146,11 +146,40 @@ class ProductProvider extends Component {
 	closeCart = () => {
 		this.setState({ cartOpen: false });
 	};
+
+	//cart functionality
+	//increment item quantity
+	increment = (id) => {
+		const storeProducts = [ ...this.state.storeProducts ];
+		const item = storeProducts.find((item) => item.id === id);
+
+		item.count += 1;
+		this.setState({ storeProducts });
+		console.log(id);
+	};
+	clearCart = () => {
+		// this.setState({ storeProducts: [] });
+		// localStorage.clear();
+	};
+	//decrement item quantity
+
+	decrement = (id) => {
+		console.log(id);
+	};
+	//remove item from store list
+
+	removeItem = (id) => {
+		console.log(id);
+	};
 	render () {
 		return (
 			<ProductContext.Provider
 				value={{
 					...this.state,
+					increment        : this.increment,
+					decrement        : this.decrement,
+					clearCart        : this.clearCart,
+					removeItem       : this.removeItem,
 					handleCart       : this.handleCart,
 					handleSideBar    : this.handleSideBar,
 					openCart         : this.openCart,
