@@ -150,26 +150,67 @@ class ProductProvider extends Component {
 	//cart functionality
 	//increment item quantity
 	increment = (id) => {
-		const storeProducts = [ ...this.state.storeProducts ];
-		const item = storeProducts.find((item) => item.id === id);
+		const cart = [ ...this.state.cart ];
+		const itemIndex = cart.findIndex((item) => item.id === id);
+		const item = cart[itemIndex];
 
 		item.count += 1;
-		this.setState({ storeProducts });
-		console.log(id);
+		item.total = item.count * item.price;
+		this.setState(
+			() => {
+				return { cart };
+			},
+			() => {
+				this.addTotals();
+				this.syncStorage();
+			}
+		);
 	};
 	clearCart = () => {
-		// this.setState({ storeProducts: [] });
-		// localStorage.clear();
+		this.setState(
+			() => {
+				return { cart: [] };
+			},
+			() => {
+				this.addTotals();
+				this.syncStorage();
+			}
+		);
 	};
 	//decrement item quantity
 
 	decrement = (id) => {
-		console.log(id);
+		const cart = [ ...this.state.cart ];
+		const itemIndex = cart.findIndex((item) => item.id === id);
+		const item = cart[itemIndex];
+		if (item.count > 1) {
+			item.count -= 1;
+			item.total = item.count * item.price;
+		} else this.removeItem();
+		this.setState(
+			() => {
+				return { cart };
+			},
+			() => {
+				this.addTotals();
+				this.syncStorage();
+			}
+		);
 	};
 	//remove item from store list
 
 	removeItem = (id) => {
-		console.log(id);
+		const cart = [ ...this.state.cart ];
+		const newCart = cart.filter((item) => item.id !== id);
+		this.setState(
+			() => {
+				return { cart: newCart };
+			},
+			() => {
+				this.addTotals();
+				this.syncStorage();
+			}
+		);
 	};
 	render () {
 		return (

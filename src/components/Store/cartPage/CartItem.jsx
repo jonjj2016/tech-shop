@@ -32,14 +32,15 @@ export default function CartItem ({ cartItem, increment, decrement, removeItem }
 				</div>
 			</div>
 			{/* quantuty end */}
-			{/* total */}
+			{/* remove item */}
 			<div className="col-10 mx-auto col-lg-2">
 				<FaTrash className="text-danger cart-icon " onClick={() => removeItem(id)} />
 			</div>
 			{/* total */}
 			<div className="col-10 mx-auto col-lg-2">
-				<span className="d-lg-none">item total :</span>
-				${total}
+				<strong className="text-muted">item total :${total}</strong>
+				{/* <span className="d-lg-none">item total :</span>
+				 */}
 			</div>
 			{/* quantuty end */}
 		</div>
