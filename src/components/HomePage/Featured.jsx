@@ -1,7 +1,6 @@
 import React from 'react';
 import Product from '../Product';
 import Title from '../Title';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProductConsumer } from '../../context';
 export default function Featured () {
@@ -29,4 +28,3 @@ export default function Featured () {
 		</div>
 	);
 }
-const FeaturedWrapper = styled.section`margin: 2rem auto;`;

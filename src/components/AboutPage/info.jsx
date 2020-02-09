@@ -11,7 +11,7 @@ const Info = () => {
 						<img
 							src={aboutBcg}
 							className="img-fluid img-thumbnail"
-							alt="about  image"
+							alt="about"
 							style={{ background: 'var(--darkGrey' }}
 						/>
 					</div>

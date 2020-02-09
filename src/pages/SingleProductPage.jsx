@@ -25,7 +25,7 @@ const SingleProduct = () => {
 											{/* it counts from index.js */}
 											<img
 												src={`../${image}`}
-												alt="product image"
+												alt="product"
 												className="image-fluid image-effect"
 											/>
 										</div>

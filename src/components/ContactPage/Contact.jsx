@@ -1,7 +1,6 @@
 import React from 'react';
 import Title from '../Title';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+
 export default function Contact () {
 	return (
 		<section className="py-5">

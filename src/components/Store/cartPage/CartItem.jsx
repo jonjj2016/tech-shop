@@ -18,7 +18,7 @@ export default function CartItem ({ cartItem, increment, decrement, removeItem }
 			{/* Price */}
 			<div className="col-10 mx-auto col-lg-2">
 				<span className="d-lg-none">price :</span>
-				{price}
+				${price}
 			</div>
 			{/* price end */}
 			{/* quantity */}
